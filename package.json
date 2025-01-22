@@ -4,7 +4,7 @@
   "description": "A Node.js API wrapper for GeoNet — Aotearoa's geological hazard monitoring system.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
