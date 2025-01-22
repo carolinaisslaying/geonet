@@ -7,6 +7,11 @@ export class GeoNet {
     private intensityService: IntensityService;
     private strongService: StrongService;
 
+    constructor(intensityService: IntensityService, strongService: StrongService) {
+        this.intensityService = intensityService;
+        this.strongService = strongService;
+    }
+
     public async getIntensity(req: IntensityRequestUnion): Promise<IntensityResponse> {
         return await this.intensityService.getIntensity(req);
     }
