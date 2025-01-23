@@ -1,14 +1,16 @@
 import { Feature as CommonFeature } from './common';
 
+/* 
+    Types relating to strong endpoint requests.
+*/
+
 export interface StrongRequest {
     publicID: string;
 }
 
-export interface StrongResponse {
-    type: string;
-    metadata: Metadata;
-    features: StrongFeature[];
-}
+/* 
+    Types relating to strong endpoint responses.
+*/
 
 export interface Metadata {
     author: string;
@@ -36,3 +38,9 @@ export interface StrongProperties {
 }
 
 export type StrongFeature = CommonFeature<StrongProperties>;
+
+export interface StrongResponse {
+    type: string;
+    metadata: Metadata;
+    features: StrongFeature[];
+}
