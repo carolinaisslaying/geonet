@@ -5,16 +5,17 @@ import { BaseService } from "./BaseService";
 /**
  * IntensityService class for fetching intensity data from the GeoNet API.
  * @extends BaseService
+ * @since 1.0.0 
  */
 export class IntensityService extends BaseService {
     public async getIntensity(req: IntensityRequestUnion): Promise<IntensityResponse> {
         /**
          * Fetches shaking intensity information data based on the provided request parameters.
          * 
-         * @since 1.0.0
          * @param {IntensityRequestUnion} req - The request parameters for fetching intensity data.
          * @returns {Promise<IntensityResponse>} - A promise that resolves to the intensity response data.
          * @throws {Error} - Throws an error if the request type is invalid.
+         * @since 1.0.0
          */
 
         if (req.publicID && typeof(req.publicID) !== "string") throw new Error("Public ID must be a string.");

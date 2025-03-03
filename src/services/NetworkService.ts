@@ -5,15 +5,16 @@ import { BaseService } from "./BaseService";
 /**
  * StrongService class for fetching strong motion information for a specified quake from the GeoNet API.
  * @extends BaseService
+ * @since 1.0.0 
  */
 export class NetworkService extends BaseService {
     /**
      * Fetches network data for a given sensor type.
      * 
-     * @since 1.0.0
      * @param {NetworkSensorRequest} req - The request object containing the sensor type.
      * @returns {Promise<NetworkSensorResponse>} - A promise that resolves to the sensor data.
      * @throws {Error} - Throws an error if the sensor type is not provided, or if the optional parameters are not strings.
+     * @since 1.0.0
      */
     public async getNetworkSensor(req: NetworkSensorRequest): Promise<NetworkSensorResponse> {
         if (!req.sensorType) throw new Error("Sensor type not provided.");
@@ -47,10 +48,10 @@ export class NetworkService extends BaseService {
     /**
      * Fetches network data for a specified GNSS mark.
      * 
-     * @since 1.0.0
      * @param {NetworkGNSStationRequest} req - The request object containing the mark code.
      * @returns {Promise<NetworkGNSStationResponse>} - A promise that resolves to the sensor details data.
      * @throws {Error} - Throws an error if the mark code is not provided.
+     * @since 1.0.0
      */
     public async getNetworkGNSSDetails(req: NetworkGNSStationRequest): Promise<NetworkGNSStationResponse> {
         if (!req.code || typeof(req.code) !== "string") throw new Error("GNSS mark code not provided, or was not a string.");
@@ -64,10 +65,10 @@ export class NetworkService extends BaseService {
     /**
      * Fetches network data for a specified GNSS mark.
      * 
-     * @since 1.0.0
      * @param {NetworkFDSNStationRequest} req - The request object containing the mark code.
      * @returns {Promise<NetworkFDSNStationResponse>} - A promise that resolves to the sensor details data.
      * @throws {Error} - Throws an error if the mark code is not provided.
+     * @since 1.0.0
      */
     public async getNetworkFDSNDetails(req: NetworkFDSNStationRequest): Promise<NetworkFDSNStationResponse> {
         if (!req.station || typeof(req.station) !== "string") throw new Error("FDSN station code not provided, or was not a string.");

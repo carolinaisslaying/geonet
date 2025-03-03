@@ -5,15 +5,16 @@ import { BaseService } from "./BaseService";
 /**
  * NewsService class for fetching a simple JSON feed of GeoNet's news from the GeoNet API.
  * @extends BaseService
+ * @since 1.0.0 
  */
 export class NewsService extends BaseService {
     /**
      * Fetches a simple JSON feed of GeoNet's news.
      * 
-     * @since 1.0.0
      * @param {NewsFeedRequest} req - The request parameters for fetching the news feed. If empty, the first page is returned.
      * @returns {Promise<NewsFeedResponse>} - A promise that resolves to the simple JSON news feed data.
      * @throws {Error} - Throws an error if the page number is not an integer.
+     * @since 1.0.0
      */
     public async getNews(req: NewsFeedRequest): Promise<NewsFeedResponse> {
         if (req.page && isNaN(req.page)) throw new Error("Invalid page number, the page number must be an integer.");
