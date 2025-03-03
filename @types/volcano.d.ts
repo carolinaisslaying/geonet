@@ -70,12 +70,6 @@ export enum QuakeIntensity {
     Severe = "severe"
 }
 
-export enum QuakeStatus {
-    Reviewed = "reviewed",
-    Automatic = "automatic",
-    Preliminary = "preliminary"
-}
-
 export interface VolcanoQuakeProperties extends QuakeProperties {
     intensity: QuakeIntensity;
     regionIntensity: QuakeIntensity;
