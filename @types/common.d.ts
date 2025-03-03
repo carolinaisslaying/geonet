@@ -1,10 +1,10 @@
 export interface Geometry {
-    type: 'Point';
+    type: "Point";
     coordinates: [number, number];
 }
 
 export interface Feature<T> {
-    type: 'Feature';
+    type: "Feature";
     geometry: Geometry;
     properties: T;
 }

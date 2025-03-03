@@ -1,4 +1,4 @@
-import { Feature as CommonFeature } from './common';
+import { Feature as CommonFeature } from "./common";
 
 /* 
     Types relating to strong endpoint requests.
