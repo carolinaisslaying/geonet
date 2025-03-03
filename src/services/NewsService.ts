@@ -13,7 +13,7 @@ export class NewsService extends BaseService {
      * @returns {Promise<NewsFeedResponse>} - A promise that resolves to the simple JSON news feed data.
      */
     public async getNews(req: NewsFeedRequest): Promise<NewsFeedResponse> {
-        if (isNaN(req.page)) throw new Error("Invalid page number, the page number must be an integer.");
+        if (req.page && isNaN(req.page)) throw new Error("Invalid page number, the page number must be an integer.");
 
         return await this.GET({
             endpoint: `/news/geonet${req.page ? `?page=${req.page}` : ""}`,
