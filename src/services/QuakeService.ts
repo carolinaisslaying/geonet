@@ -11,6 +11,7 @@ export class QuakeService extends BaseService {
     /**
      * Fetches quake data for a given public ID.
      * 
+     * @since 1.0.0 
      * @param {QuakeRequest} req - The request object containing the public ID.
      * @returns {Promise<QuakeResponse>} - A promise that resolves to the quake data.
      * @throws {Error} - Throws an error if the public ID is not provided.
@@ -27,12 +28,13 @@ export class QuakeService extends BaseService {
     /**
      * Fetches location history data for a given public ID. Not all quakes have a location history.
      * 
+     * @since 1.0.0 
      * @param {QuakeRequest} req - The request object containing the public ID.
      * @returns {Promise<QuakeHistoryResponse>} - A promise that resolves to the quake history data. The features array may be empty!
      * @throws {Error} - Throws an error if the public ID is not provided.
      */
     public async getQuakeHistory(req: QuakeRequest): Promise<QuakeHistoryResponse> {
-        if (!req.publicID) throw new Error("Public ID not provided.");
+        if (!req.publicID || typeof(req.publicID) !== "string") throw new Error("Public ID not provided, or was not a string.");
 
         return await this.GET({
             endpoint: `/quake/history/${req.publicID}`,
@@ -43,6 +45,7 @@ export class QuakeService extends BaseService {
     /**
      * Fetches quake stats for the past 365 days.
      * 
+     * @since 1.0.0 
      * @returns {Promise<QuakeStatsResponse>} - A promise that resolves to the quake stats data.
      */
     public async getQuakeStats(): Promise<QuakeStatsResponse> {
@@ -55,6 +58,7 @@ export class QuakeService extends BaseService {
     /**
      * Fetches all quakes that have occurred over the past 365 days.
      * 
+     * @since 1.0.0 
      * @param {QuakesRequest} req - The request object containing the MMI.  
      * @returns {Promise<QuakesResponse>} - A promise that resolves to the quakes data.
      * @error {Error} - Throws an error if the MMI is not provided or is not a valid MMI.

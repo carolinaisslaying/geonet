@@ -11,6 +11,7 @@ export class BaseService {
     /**
      * Performs a GET request to the specified endpoint.
      * 
+     * @since 1.0.0
      * @param {BaseServiceGETRequest} req - The request object containing the endpoint and format.
      * @returns {Promise<any>} - A promise that resolves to the response data.
      * @throws {Error} - Throws an error if the endpoint is not provided, is not a string, or does not start with a backslash (/).

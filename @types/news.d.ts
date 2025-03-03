@@ -3,7 +3,7 @@
 */
 
 export interface NewsFeedRequest {
-    page: undefined | number;
+    page?: number;
 }
 
 /* 
