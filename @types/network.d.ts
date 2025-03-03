@@ -1,6 +1,6 @@
 import { Feature as CommonFeature } from "./common";
-import { FDSNStationChannel } from "./sensor/fdsn";
-import { GNSSStationAntennaPeriod, GNSSStationReceiverPeriod } from "./sensor/gnss";
+import { FDSNStationChannel } from "./sensor";
+import { GNSSStationAntennaPeriod, GNSSStationReceiverPeriod } from "./sensor";
 
 /* 
     Types relating to both network endpoint requests and responses.
