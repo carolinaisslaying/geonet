@@ -18,7 +18,7 @@ export class StrongService extends BaseService {
         if (!req.publicID) throw new Error("Public ID not provided.");
 
         return await this.GET({
-            endpoint: `/intensity/strong/processed/?${req.publicID}`,
+            endpoint: `/intensity/strong/processed/${req.publicID}`,
             format: JSONFormatTypes.APPLICATION_JSON
         });
     }

@@ -1,4 +1,4 @@
-import { Feature as CommonFeature } from "./common";
+import { Feature as CommonFeature, MMI } from "./common";
 
 /* 
     Types relating to strong endpoint requests.
@@ -27,7 +27,7 @@ export interface Metadata {
 export interface StrongProperties {
     distance: number;
     location: string;
-    mmi: number;
+    mmi: MMI;
     name: string;
     network: string;
     pga_h: number;

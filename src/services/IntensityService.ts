@@ -28,9 +28,9 @@ export class IntensityService extends BaseService {
 
         } else if (req.type === "reported") {
             const params = new URLSearchParams({
-            type: req.type,
-            ...(req.aggregation && { aggregation: req.aggregation }),
-            ...(req.publicID && { publicID: req.publicID })
+                type: req.type,
+                ...(req.aggregation && { aggregation: req.aggregation }),
+                ...(req.publicID && { publicID: req.publicID })
             });
 
             return await this.GET({
