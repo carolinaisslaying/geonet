@@ -1,11 +1,11 @@
 import { JSONFormatTypes } from "../../@types/base";
 import { MMI } from "../../@types/common";
-import { QuakeRequest, QuakeResponse, QuakesRequest, QuakesResponse, QuakeStatsResponse } from "../../@types/quake";
+import { QuakeHistoryResponse, QuakeRequest, QuakeResponse, QuakesRequest, QuakesResponse, QuakeStatsResponse } from "../../@types/quake";
 import { BaseService } from "./BaseService";
 
 /**
- * StrongService class for fetching strong motion information for a specified quake from the GeoNet API.
- * Extends the BaseService class.
+ * QuakeService class for fetching quake information from the GeoNet API.
+ * @extends BaseService
  */
 export class QuakeService extends BaseService {
     /**
@@ -28,10 +28,10 @@ export class QuakeService extends BaseService {
      * Fetches location history data for a given public ID. Not all quakes have a location history.
      * 
      * @param {QuakeRequest} req - The request object containing the public ID.
-     * @returns {Promise<QuakeResponse>} - A promise that resolves to the quake data. The features array may be empty!
+     * @returns {Promise<QuakeHistoryResponse>} - A promise that resolves to the quake history data. The features array may be empty!
      * @throws {Error} - Throws an error if the public ID is not provided.
      */
-    public async getQuakeHistory(req: QuakeRequest): Promise<QuakeResponse> {
+    public async getQuakeHistory(req: QuakeRequest): Promise<QuakeHistoryResponse> {
         if (!req.publicID) throw new Error("Public ID not provided.");
 
         return await this.GET({
@@ -43,7 +43,7 @@ export class QuakeService extends BaseService {
     /**
      * Fetches quake stats for the past 365 days.
      * 
-     * @returns {Promise<QuakeStatsResponse>} - A promise that resolves to the quake stats.
+     * @returns {Promise<QuakeStatsResponse>} - A promise that resolves to the quake stats data.
      */
     public async getQuakeStats(): Promise<QuakeStatsResponse> {
         return await this.GET({
@@ -56,7 +56,7 @@ export class QuakeService extends BaseService {
      * Fetches all quakes that have occurred over the past 365 days.
      * 
      * @param {QuakesRequest} req - The request object containing the MMI.  
-     * @returns {Promise<QuakesResponse>} - A promise that resolves to quakes.
+     * @returns {Promise<QuakesResponse>} - A promise that resolves to the quakes data.
      * @error {Error} - Throws an error if the MMI is not provided or is not a valid MMI.
      */
     public async getQuakes(req: QuakesRequest): Promise<QuakesResponse> {

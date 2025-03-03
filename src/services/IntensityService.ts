@@ -4,7 +4,7 @@ import { BaseService } from "./BaseService";
 
 /**
  * IntensityService class for fetching intensity data from the GeoNet API.
- * Extends the BaseService class to utilize common GET functionality.
+ * @extends BaseService
  */
 export class IntensityService extends BaseService {
     public async getIntensity(req: IntensityRequestUnion): Promise<IntensityResponse> {

@@ -4,7 +4,7 @@ import { BaseService } from "./BaseService";
 
 /**
  * StrongService class for fetching strong motion information for a specified quake from the GeoNet API.
- * Extends the BaseService class.
+ * @extends BaseService
  */
 export class StrongService extends BaseService {
     /**

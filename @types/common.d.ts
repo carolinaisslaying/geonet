@@ -21,3 +21,17 @@ export enum MMI {
     Violent = 7,
     Extreme = 8
 }
+
+export enum Quality {
+    Best = "best",
+    Preliminary = "preliminary",
+    Automatic = "automatic",
+    Deleted = "deleted"
+}
+
+export enum Status {
+    Automatic = "automatic",
+    Reviewed = "reviewed",
+    Duplicate = "duplicate",
+    Deleted = "deleted"
+}

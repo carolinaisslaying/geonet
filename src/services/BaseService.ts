@@ -3,6 +3,7 @@ import { BaseServiceGETRequest } from "../../@types/base";
 
 /**
  * BaseService class to handle common HTTP requests to the GeoNet API.
+ * @abstract
  */
 export class BaseService {
     protected baseURL: string = "https://api.geonet.org.nz";

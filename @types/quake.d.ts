@@ -1,4 +1,4 @@
-import { Feature as CommonFeature, MMI } from "./common";
+import { Feature as CommonFeature, MMI, Quality } from "./common";
 
 /* 
     Types relating to quake endpoint requests.
@@ -23,7 +23,7 @@ export interface QuakeProperties {
     magnitude: number;
     mmi: MMI;
     locality: string;
-    quality: string;
+    quality: Quality;
 }
 
 export interface QuakeHistoryProperties extends QuakeProperties {
