@@ -6,7 +6,6 @@ import { Feature as CommonFeature, MMI } from "./common";
 
 export interface IntensityRequest {
     type: "measured";
-    publicID: undefined | string;
 }
 
 export interface IntensityRequestReported {

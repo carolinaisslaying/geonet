@@ -40,7 +40,7 @@ export class NetworkService extends BaseService {
         });
 
         return await this.GET({
-            endpoint: `/network/sensor/?${params}`,
+            endpoint: `/network/sensor?${params}`,
             format: JSONFormatTypes.APPLICATION_VND_GEO_JSON_VERSION_2
         });
     }
@@ -48,17 +48,17 @@ export class NetworkService extends BaseService {
     /**
      * Fetches network data for a specified GNSS mark.
      * 
-     * @param {NetworkGNSStationRequest} req - The request object containing the mark code.
+     * @param {string} code - The mark code.
      * @returns {Promise<NetworkGNSStationResponse>} - A promise that resolves to the sensor details data.
      * @throws {Error} - Throws an error if the mark code is not provided.
      * @since 1.0.0
      */
-    public async getNetworkGNSSDetails(req: NetworkGNSStationRequest): Promise<NetworkGNSStationResponse> {
-        if (!req.code || typeof(req.code) !== "string") throw new Error("GNSS mark code not provided, or was not a string.");
+    public async getNetworkGNSSDetails(code: string): Promise<NetworkGNSStationResponse> {
+        if (!code || typeof(code) !== "string") throw new Error("GNSS mark code not provided, or was not a string.");
 
         return await this.GET({
-            endpoint: `/network/gnss/mark?code=${req.code}`,
-            format: JSONFormatTypes.APPLICATION_VND_GEO_JSON_VERSION_2
+            endpoint: `/network/gnss/mark?code=${code}`,
+            format: JSONFormatTypes.APPLICATION_JSON_VERSION_2
         });
     }
 
@@ -75,8 +75,8 @@ export class NetworkService extends BaseService {
         if (!req.network || typeof(req.network) !== "string") throw new Error("FDSN network code not provided, or was not a string.");
 
         return await this.GET({
-            endpoint: `/network/gnss/mark?station=${req.station}&network=${req.network}`,
-            format: JSONFormatTypes.APPLICATION_VND_GEO_JSON_VERSION_2
+            endpoint: `/network/fdsn/station?station=${req.station}&network=${req.network}`,
+            format: JSONFormatTypes.APPLICATION_JSON_VERSION_2
         });
     }
 }

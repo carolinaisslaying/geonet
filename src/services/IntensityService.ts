@@ -18,12 +18,9 @@ export class IntensityService extends BaseService {
          * @since 1.0.0
          */
 
-        if (req.publicID && typeof(req.publicID) !== "string") throw new Error("Public ID must be a string.");
-
         if (req.type === "measured") {
             const params = new URLSearchParams({
-                type: req.type,
-                ...(req.publicID && { publicID: req.publicID })
+                type: req.type
             });
               
             return await this.GET({
@@ -32,6 +29,8 @@ export class IntensityService extends BaseService {
             });
 
         } else if (req.type === "reported") {
+            if (req.publicID && typeof(req.publicID) !== "string") throw new Error("Public ID must be a string.");
+            
             const params = new URLSearchParams({
                 type: req.type,
                 ...(req.aggregation && { aggregation: req.aggregation }),

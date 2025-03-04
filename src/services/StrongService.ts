@@ -11,16 +11,16 @@ export class StrongService extends BaseService {
     /**
      * Fetches strong intensity data for a given public ID.
      * 
-     * @param {StrongRequest} req - The request object containing the public ID.
+     * @param {string} publicID - The public ID for the earthquake.
      * @returns {Promise<StrongResponse>} - A promise that resolves to the strong intensity data.
      * @throws {Error} - Throws an error if the public ID is not provided.
      * @since 1.0.0 
      */
-    public async getStrong(req: StrongRequest): Promise<StrongResponse> {
-        if (!req.publicID || typeof(req.publicID) !== "string") throw new Error("Public ID not provided, or was not a string.");
+    public async getStrong(publicID: string): Promise<StrongResponse> {
+        if (!publicID || typeof(publicID) !== "string") throw new Error("Public ID not provided, or was not a string.");
 
         return await this.GET({
-            endpoint: `/intensity/strong/processed/${req.publicID}`,
+            endpoint: `/intensity/strong/processed/${publicID}`,
             format: JSONFormatTypes.APPLICATION_JSON
         });
     }

@@ -11,10 +11,11 @@ import { QuakeService } from "./services/QuakeService";
 import { QuakeHistoryResponse, QuakeRequest, QuakeResponse, QuakesRequest, QuakesResponse, QuakeStatsResponse } from "../@types/quake";
 
 import { VolcanoService } from "./services/VolcanoService";
-import { VolcanoAlertLevelResponse, VolcanoQuakeRequest, VolcanoQuakeResponse } from "../@types/volcano";
+import { VolcanoAlertLevelResponse, VolcanoID, VolcanoQuakeRequest, VolcanoQuakeResponse } from "../@types/volcano";
 
 import { NetworkService } from "./services/NetworkService";
 import { NetworkFDSNStationRequest, NetworkFDSNStationResponse, NetworkGNSStationRequest, NetworkGNSStationResponse, NetworkSensorRequest, NetworkSensorResponse } from "../@types/network";
+import { MMI } from "../@types/common";
 
 /**
  * Main class for interacting with the GeoNet API.
@@ -57,23 +58,23 @@ export class GeoNet {
     }
 
     /** @inheritdoc {@link StrongService.getStrong} */
-    public async getStrong(req: StrongRequest): Promise<StrongResponse> {
-        return await this.strongService.getStrong(req);
+    public async getStrong(publicID: string): Promise<StrongResponse> {
+        return await this.strongService.getStrong(publicID);
     }
 
     /** @inheritdoc {@link NewsService.getNews} */
-    public async getNews(req: NewsFeedRequest): Promise<NewsFeedResponse> {
-        return await this.newsService.getNews(req);
+    public async getNews(page?: number): Promise<NewsFeedResponse> {
+        return await this.newsService.getNews(page);
     }
 
     /** @inheritdoc {@link QuakeService.getQuake} */
-    public async getQuake(req: QuakeRequest): Promise<QuakeResponse> {
-        return await this.quakeService.getQuake(req);
+    public async getQuake(publicID: string): Promise<QuakeResponse> {
+        return await this.quakeService.getQuake(publicID);
     }
 
     /** @inheritdoc {@link QuakeService.getQuakeHistory} */
-    public async getQuakeHistory(req: QuakeRequest): Promise<QuakeHistoryResponse> {
-        return await this.quakeService.getQuakeHistory(req);
+    public async getQuakeHistory(publicID: string): Promise<QuakeHistoryResponse> {
+        return await this.quakeService.getQuakeHistory(publicID);
     }
 
     /** @inheritdoc {@link QuakeService.getQuakeStats} */
@@ -82,8 +83,8 @@ export class GeoNet {
     }
 
     /** @inheritdoc {@link QuakeService.getQuakes} */
-    public async getQuakes(req: QuakesRequest): Promise<QuakesResponse> {
-        return await this.quakeService.getQuakes(req);
+    public async getQuakes(mmi: MMI): Promise<QuakesResponse> {
+        return await this.quakeService.getQuakes(mmi);
     }
 
     /** @inheritdoc {@link VolcanoService.getVolcanoAlertLevel} */
@@ -92,8 +93,8 @@ export class GeoNet {
     }
 
     /** @inheritdoc {@link VolcanoService.getVolcanoQuakes} */
-    public async getVolcanoQuakes(req: VolcanoQuakeRequest): Promise<VolcanoQuakeResponse> {
-        return await this.volcanoService.getVolcanoQuakes(req);
+    public async getVolcanoQuakes(volcanoID: VolcanoID): Promise<VolcanoQuakeResponse> {
+        return await this.volcanoService.getVolcanoQuakes(volcanoID);
     }
 
     /** @inheritdoc {@link NetworkService.getNetworkSensor} */
@@ -102,8 +103,8 @@ export class GeoNet {
     }
 
     /** @inheritdoc {@link NetworkService.getNetworkGNSSDetails} */
-    public async getNetworkGNSSDetails(req: NetworkGNSStationRequest): Promise<NetworkGNSStationResponse> {
-        return await this.networkService.getNetworkGNSSDetails(req);
+    public async getNetworkGNSSDetails(code: string): Promise<NetworkGNSStationResponse> {
+        return await this.networkService.getNetworkGNSSDetails(code);
     }
 
     /** @inheritdoc {@link NetworkService.getNetworkFDSNDetails} */

@@ -24,17 +24,17 @@ export class VolcanoService extends BaseService {
     /**
      * Fetches quakes in the vicinity of the volcano within a pre-defined region by GeoNet over the past 60 days.
      * 
-     * @param {VolcanoQuakeRequest} req - The request object containing the volcano ID.
+     * @param {VolcanoID} volcanoID - The request object containing the volcano ID.
      * @returns {Promise<VolcanoQuakeResponse>} - A promise that resolves to the volcano quake data.
      * @throws {Error} - Throws an error if the volcano ID is not provided or is not a valid volcano ID.
      * @since 1.0.0 
      */
-    public async getVolcanoQuakes(req: VolcanoQuakeRequest): Promise<VolcanoQuakeResponse> {
-        if (!req.volcanoID || !Object.values(VolcanoID).includes(req.volcanoID)) throw new Error("Volcano ID not provided.");
+    public async getVolcanoQuakes(volcanoID: VolcanoID): Promise<VolcanoQuakeResponse> {
+        if (!volcanoID || !Object.values(VolcanoID).includes(volcanoID)) throw new Error("Volcano ID not provided, or was invalid.");
 
         return await this.GET({
-            endpoint: `/intensity/strong/processed/${req.volcanoID}`,
-            format: JSONFormatTypes.APPLICATION_JSON
+            endpoint: `/volcano/quake/${volcanoID}`,
+            format: JSONFormatTypes.APPLICATION_VND_GEO_JSON_VERSION_2
         });
     }
 }
