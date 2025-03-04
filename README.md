@@ -26,6 +26,7 @@ yarn add geonet
 - 📡 Network sensor data access
 - 📊 Strong motion data
 - 🗺️ GeoJSON format support
+- 🧰 Quality of life utilities
 - ✨ Full TypeScript support
 - 📝 Comprehensive documentation
 
