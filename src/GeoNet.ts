@@ -16,14 +16,15 @@ import { VolcanoAlertLevelResponse, VolcanoID, VolcanoQuakeResponse } from "../@
 import { NetworkService } from "./services/NetworkService";
 import { NetworkFDSNStationRequest, NetworkFDSNStationResponse, NetworkGNSStationResponse, NetworkSensorRequest, NetworkSensorResponse } from "../@types/network";
 
-import { MMI } from "../@types/common";
+import { Geometry, MMI } from "../@types/common";
+import { QuakeMapUtil } from "./utils/QuakeMapUtil";
 
 /**
- * Main class for interacting with the GeoNet API.
+ * Main class for interacting with the GeoNet API and related utilities.
  * Provides access to all GeoNet services through a unified interface.
  * 
  * @remarks
- * This class acts as a central interface for all GeoNet API services, thus providing a simplified
+ * This class acts as a central interface for all GeoNet API services and related utilities, thus providing a simplified
  * way for accessing earthquake, volcano, network data, among others, from GeoNet.
  * 
  * @example
@@ -42,6 +43,7 @@ import { MMI } from "../@types/common";
  * @see {@link QuakeService} For quake-related methods.
  * @see {@link VolcanoService} For volcano-related methods.
  * @see {@link NetworkService} For network-related methods.
+ * @see {@link QuakeMapUtil} For generating GeoNet quake map URLs.
  * 
  * @since 1.0.0
  */
@@ -62,7 +64,8 @@ export class GeoNet {
         private readonly newsService: NewsService = new NewsService(),
         private readonly quakeService: QuakeService = new QuakeService(),
         private readonly volcanoService: VolcanoService = new VolcanoService(),
-        private readonly networkService: NetworkService = new NetworkService()
+        private readonly networkService: NetworkService = new NetworkService(),
+        private readonly quakeMapUtil: QuakeMapUtil = new QuakeMapUtil()
     ) {}
 
     /** @inheritdoc {@link IntensityService.getIntensity} */
@@ -123,5 +126,10 @@ export class GeoNet {
     /** @inheritdoc {@link NetworkService.getNetworkFDSNDetails} */
     public async getNetworkFDSNDetails(req: NetworkFDSNStationRequest): Promise<NetworkFDSNStationResponse> {
         return await this.networkService.getNetworkFDSNDetails(req);
+    }
+
+    /** @inheritdoc {@link QuakeMapUtil.generateMapURL} */
+    public generateMapURL(coordinates: Geometry["coordinates"], mmi: MMI): string {
+        return this.quakeMapUtil.generateMapURL(coordinates, mmi);
     }
 }

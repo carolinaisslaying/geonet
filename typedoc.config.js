@@ -3,7 +3,7 @@ module.exports = {
     entryPoints: ["src/**/*.ts" , "@types/**/*.ts"],
     exclude: ["**/*.test.ts"],
     out: "docs",
-    name: "GeoNet API Documentation",
+    name: "GeoNet Node Package Documentation",
     theme: "default",
     categorizeByGroup: true,
     categoryOrder: ["Services", "Types", "*"],

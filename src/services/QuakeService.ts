@@ -65,7 +65,7 @@ export class QuakeService extends BaseService {
      * @since 1.0.0 
      */
     public async getQuakes(mmi: MMI): Promise<QuakesResponse> {
-        if (!mmi || !Object.values(MMI).includes(mmi)) throw new Error("MMI not provided, or was not a valid MMI.");
+        if (!mmi || (!Object.values(MMI).includes(mmi) && mmi !== (MMI.NotFelt as MMI))) throw new Error("MMI not provided, or was not a valid MMI.");
 
         return await this.GET({
             endpoint: `/quake?MMI=${mmi}`,

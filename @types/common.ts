@@ -16,8 +16,8 @@ export enum MMI {
     Light = 2,
     Moderate = 3,
     Strong = 4,
-    Severe = 5,
-    VeryStrong = 6,
+    VeryStrong = 5,
+    Severe = 6,
     Violent = 7,
     Extreme = 8
 }
