@@ -3,19 +3,16 @@
   "version": "1.0.0",
   "description": "A Node.js API wrapper for GeoNet — Aotearoa's geological hazard monitoring system.",
   "main": "dist/GeoNet.js",
-  "module": "dist/GeoNet.mjs",
+  "module": "dist/GeoNet.js",
   "types": "dist/GeoNet.d.ts",
   "files": [
     "dist",
     "README.md",
-    "LICENSE"
+    "LICENCE"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf dist && tsc",
     "clean": "rm -rf dist",
-    "prepublishOnly": "pnpm run clean && pnpm run build",
-    "type-check": "tsc --noEmit",
-    "format": "prettier --write .",
     "test": "jest"
   },
   "engines": {
@@ -51,12 +48,9 @@
   "devDependencies": {
     "@jest/types": "^29.6.3",
     "@types/jest": "^29.5.14",
-    "@types/mocha": "^10.0.10",
     "@types/node": "^22.13.9",
     "jest": "^29.7.0",
-    "prettier": "^3.5.3",
     "ts-jest": "^29.2.6",
-    "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
   }
 }
