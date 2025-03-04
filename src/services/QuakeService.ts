@@ -61,7 +61,7 @@ export class QuakeService extends BaseService {
      * 
      * @param {MMI} mmi - The request object containing the MMI.  
      * @returns {Promise<QuakesResponse>} - A promise that resolves to the quakes data.
-     * @error {Error} - Throws an error if the MMI is not provided or is not a valid MMI.
+     * @throws {Error} - Throws an error if the MMI is not provided or is not a valid MMI.
      * @since 1.0.0 
      */
     public async getQuakes(mmi: MMI): Promise<QuakesResponse> {

@@ -12,7 +12,9 @@
   "scripts": {
     "build": "rm -rf dist && tsc",
     "clean": "rm -rf dist",
-    "test": "jest"
+    "test": "jest",
+    "docs": "typedoc --options ./typedoc.config.js",
+    "docs:watch": "typedoc --options ./typedoc.config.js --watch"
   },
   "engines": {
     "node": ">=22"

@@ -2,19 +2,20 @@ import { IntensityService } from "./services/IntensityService";
 import { IntensityRequestUnion, IntensityResponse } from "../@types/intensity";
 
 import { StrongService } from "./services/StrongService";
-import { StrongRequest, StrongResponse } from "../@types/strong";
+import { StrongResponse } from "../@types/strong";
 
 import { NewsService } from "./services/NewsService";
-import { NewsFeedRequest, NewsFeedResponse } from "../@types/news";
+import { NewsFeedResponse } from "../@types/news";
 
 import { QuakeService } from "./services/QuakeService";
-import { QuakeHistoryResponse, QuakeRequest, QuakeResponse, QuakesRequest, QuakesResponse, QuakeStatsResponse } from "../@types/quake";
+import { QuakeHistoryResponse, QuakeResponse, QuakesResponse, QuakeStatsResponse } from "../@types/quake";
 
 import { VolcanoService } from "./services/VolcanoService";
-import { VolcanoAlertLevelResponse, VolcanoID, VolcanoQuakeRequest, VolcanoQuakeResponse } from "../@types/volcano";
+import { VolcanoAlertLevelResponse, VolcanoID, VolcanoQuakeResponse } from "../@types/volcano";
 
 import { NetworkService } from "./services/NetworkService";
-import { NetworkFDSNStationRequest, NetworkFDSNStationResponse, NetworkGNSStationRequest, NetworkGNSStationResponse, NetworkSensorRequest, NetworkSensorResponse } from "../@types/network";
+import { NetworkFDSNStationRequest, NetworkFDSNStationResponse, NetworkGNSStationResponse, NetworkSensorRequest, NetworkSensorResponse } from "../@types/network";
+
 import { MMI } from "../@types/common";
 
 /**
@@ -27,22 +28,34 @@ import { MMI } from "../@types/common";
  * 
  * @example
  * ```typescript
+ * import { GeoNet } from "geonet";
  * const geonet = new GeoNet();
  * 
  * // Get recent earthquakes
- * const quakes = await geonet.getQuakes({ mmi: MMI.Weak });
+ * const quakes = await geonet.getQuakes(...);
  * ```
  * 
- * @see {@link IntensityService} For intensity-related methods
- * @see {@link StrongService} For strong motion-related methods
- * @see {@link NewsService} For news-related methods
- * @see {@link QuakeService} For quake-related methods
- * @see {@link VolcanoService} For volcano-related methods
- * @see {@link NetworkService} For network-related methods
+ * @see {@link https://api.geonet.org.nz} GeoNet API Documentation.
+ * @see {@link IntensityService} For intensity-related methods.
+ * @see {@link StrongService} For strong motion-related methods.
+ * @see {@link NewsService} For news-related methods.
+ * @see {@link QuakeService} For quake-related methods.
+ * @see {@link VolcanoService} For volcano-related methods.
+ * @see {@link NetworkService} For network-related methods.
  * 
  * @since 1.0.0
  */
 export class GeoNet {
+    /**
+     * Creates a new instance of the GeoNet client.
+     * 
+     * @param {IntensityService} intensityService - Service for intensity data.
+     * @param {StrongService} strongService - Service for strong motion data.
+     * @param {NewsService} newsService - Service for news feed data.
+     * @param {QuakeService} quakeService - Service for earthquake data.
+     * @param {VolcanoService} volcanoService - Service for volcanic activity data.
+     * @param {NetworkService} networkService - Service for network sensor data.
+     */
     constructor(
         private readonly intensityService: IntensityService = new IntensityService(),
         private readonly strongService: StrongService = new StrongService(),
