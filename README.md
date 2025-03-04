@@ -1,6 +1,8 @@
 # GeoNet API Wrapper
 
 [![Compile TypeScript](https://github.com/carolinaisslaying/geonet/actions/workflows/compile.yml/badge.svg)](https://github.com/carolinaisslaying/geonet/actions/workflows/compile.yml)
+[![Discord](https://img.shields.io/discord/1325284386643644446?logo=discord&logoColor=white&label=discord&color=5865F2)
+](https://discord.gg/VVTJhkKc4G)
 
 A Node.js API wrapper for GeoNet — Aotearoa New Zealand's geological hazard monitoring system.
 
@@ -63,15 +65,15 @@ try {
 }
 ```
 
-<!-- ## Documentation
+## Documentation
 
-For detailed documentation, visit our [documentation site](https://your-docs-url.com). -->
+For detailed documentation, visit our [documentation site](https://carolinaisslaying.github.io/geonet/).
 
 ## Contributing
 
 Contributions are welcome! Please read documentation and get familiar with the project code. For details on our code of conduct please *see* our [Code of Conduct](https://github.com/carolinaisslaying/geonet/blob/main/CODE_OF_CONDUCT.md).
 
-If you identify a security vulnerability, please read our [Security Policy](https://github.com/carolinaisslaying/geonet/blob/main/SECURITY.md) for information on how to report it, and what versions are supported.
+If you identify a security vulnerability, please read our [Security Policy](https://github.com/carolinaisslaying/geonet/blob/main/CODE_OF_CONDUCT.md) for information on how to report it, and what versions are supported.
 
 ## Development
 
@@ -102,7 +104,8 @@ This project is licensed under the AGPL-3.0 Licence, *see* the [LICENCE](https:/
 ## Support
 
 - [GitHub Issues](https://github.com/carolinaisslaying/geonet/issues)
-<!-- add once gh pages setup - [Documentation]() -->
+- [Discord](https://discord.gg/VVTJhkKc4G)
+- [Documentation](https://carolinaisslaying.github.io/geonet/)
 
 ## Acknowledgments
 
