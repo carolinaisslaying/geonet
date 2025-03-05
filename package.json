@@ -40,8 +40,7 @@
   "bugs": {
     "url": "https://github.com/carolinaisslaying/geonet/issues"
   },
-  "homepage": "https://github.com/carolinaisslaying/geonet#readme",
-  "packageManager": "pnpm@10.0.0-beta.0+sha512.5935e74d6e69a7500c443e7e4f6b7378b7612f0b6dfe7c5cb785d5be4bbe0f7f8a301d5eeb68c4aa7c7d04f95126eef539011e93991a88aba0cb8f6f07fc951d",
+  "homepage": "https://geonet.js.org",
   "dependencies": {
     "axios": "^1.8.1",
     "url": "^0.11.4"
