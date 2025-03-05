@@ -68,7 +68,7 @@ try {
 
 ## Documentation
 
-For detailed documentation, visit our [documentation site](https://carolinaisslaying.github.io/geonet/).
+For detailed documentation, visit our [documentation site](https://geonet.js.org/).
 
 ## Contributing
 
@@ -106,7 +106,7 @@ This project is licensed under the AGPL-3.0 Licence, *see* the [LICENCE](https:/
 
 - [GitHub Issues](https://github.com/carolinaisslaying/geonet/issues)
 - [Discord](https://discord.gg/VVTJhkKc4G)
-- [Documentation](https://carolinaisslaying.github.io/geonet/)
+- [Documentation](https://geonet.js.org/)
 
 ## Acknowledgments
 
