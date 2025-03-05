@@ -132,4 +132,9 @@ export class GeoNet {
     public generateMapURL(coordinates: Geometry["coordinates"], mmi: MMI): string {
         return this.quakeMapUtil.generateMapURL(coordinates, mmi);
     }
+
+    /** @inheritdoc {@link QuakeMapUtil.generateColourCode} */
+    public generateColourCode(mmi: MMI): string {
+        return this.quakeMapUtil.generateColourCode(mmi);
+    }
 }

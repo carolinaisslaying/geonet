@@ -58,4 +58,44 @@ export class QuakeMapUtil {
 
         return `${this.baseMapURL}${formattedCoordinates}-${intensity}.png`;
     }
+
+    /**
+     * Generates a colour code for a given MMI, which correspponds to the marker colour on GeoNet maps.
+     * 
+     * @param {MMI} mmi - The New Zealand Modified Mercalli Intensity of the quake.
+     * @returns {string} - The hex code colour for the earthquake based off of the MMI.
+     * @throws {Error} - Throws an error if the MMI is not provided, or is invalid.
+     * @since 1.1.0
+     */
+    public generateColourCode(mmi: MMI): string {
+        if (mmi === undefined || (!Object.values(MMI).includes(mmi))) throw new Error("MMI not provided, or was not a valid MMI.");
+
+        let colour: string;
+
+        switch(mmi) {
+            case MMI.Weak:
+                colour = "#FDD0A2";
+                break;
+            case MMI.Light:
+                colour = "#FDAE6B";
+                break;
+            case MMI.Moderate:
+                colour = "#FD8D3C";
+                break;
+            case MMI.Strong:
+                colour = "#F16913";
+                break;
+            case MMI.Severe:
+                colour = "#F03B20";
+                break;
+            case MMI.Extreme:
+                colour = "#8C2D04";
+                break;
+            default:
+                colour = "#FEECDE";
+                break;
+        }
+
+        return colour;
+    }
 }

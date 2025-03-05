@@ -10,16 +10,26 @@ export interface Feature<T> {
 }
 
 export enum MMI {
-    Unknown = -1,         // No data or unclassified intensity
-    NotFelt = 0,          // Unnoticeable: Not felt at all
-    BarelyFelt = 1,       // Unnoticeable: Barely sensed by a very few people
-    SlightlyFelt = 2,     // Unnoticeable: Felt indoors as a light vibration, no effect outdoors
-    Weak = 3,             // Weak: Felt indoors as a light vibration, hanging objects may swing slightly
-    Light = 4,            // Light: Generally noticed indoors, moderate vibration or jolt, light sleepers may be awakened
-    Moderate = 5,         // Moderate: Felt outdoors and indoors, small objects may be shifted, some glassware may break
-    Strong = 6,           // Strong: Felt by all, furniture and appliances may move, some non-structural building damage
-    Severe = 7,           // Severe: Difficulty standing, significant damage to fragile or unsecured objects
-    Extreme = 8           // Extreme: Alarm may approach panic, major structural damage, widespread destruction
+    /** No data or unclassified intensity. */
+    Unknown = -1,
+    /** Unnoticeable: Not felt at all. */
+    NotFelt = 0,
+    /** Unnoticeable: Barely sensed by a very few people. */
+    BarelyFelt = 1,
+    /** Unnoticeable: Felt indoors as a light vibration, no effect outdoors. */
+    SlightlyFelt = 2,
+    /** Weak: Felt indoors as a light vibration, hanging objects may swing slightly. */
+    Weak = 3,
+    /** Light: Generally noticed indoors, moderate vibration or jolt, light sleepers may be awakened. */
+    Light = 4,
+    /** Moderate: Felt outdoors and indoors, small objects may be shifted, some glassware may break. */
+    Moderate = 5,
+    /** Strong: Felt by all, furniture and appliances may move, some non-structural building damage. */
+    Strong = 6,
+    /** Severe: Difficulty standing, significant damage to fragile or unsecured objects. */
+    Severe = 7,
+    /** Extreme: Alarm may approach panic, major structural damage, widespread destruction. */
+    Extreme = 8
 } 
 
 export enum Quality {
