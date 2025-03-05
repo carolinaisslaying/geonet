@@ -60,7 +60,7 @@ export class QuakeMapUtil {
     }
 
     /**
-     * Generates a colour code for a given MMI, which correspponds to the marker colour on GeoNet maps.
+     * Generates a colour code for a given MMI, which corresponds to the marker colour on GeoNet maps.
      * 
      * @param {MMI} mmi - The New Zealand Modified Mercalli Intensity of the quake.
      * @returns {string} - The hex code colour for the earthquake based off of the MMI.
