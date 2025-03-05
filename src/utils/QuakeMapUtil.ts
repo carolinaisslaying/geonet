@@ -30,18 +30,30 @@ export class QuakeMapUtil {
 
         const formattedCoordinates = Math.round(coordinates[0]) + "E" + Math.abs(Math.round(coordinates[1])) + "S";
 
-        let intensity: "unnoticeable" | "weak" | "moderate" | "strong";
+        let intensity: "unnoticeable" | "weak" | "light" | "moderate" | "strong" | "severe" | "extreme";
 
-        if (mmi <= MMI.NotFelt) {
-            intensity = "unnoticeable";
-        } else if (mmi <= MMI.Light) {
-            intensity = "weak";
-        } else if (mmi <= MMI.Strong) {
-            intensity = "moderate"
-        } else if (mmi > MMI.Strong) {
-            intensity = "strong";
-        } else {
-            intensity = "weak";
+        switch (mmi) {
+            case MMI.Weak:
+                intensity = "weak";
+                break;
+            case MMI.Light:
+                intensity = "light";
+                break;
+            case MMI.Moderate:
+                intensity = "moderate";
+                break;
+            case MMI.Strong:
+                intensity = "strong";
+                break;
+            case MMI.Severe:
+                intensity = "severe";
+                break;
+            case MMI.Extreme:
+                intensity = "extreme";
+                break;
+            default:
+                intensity = "unnoticeable";
+                break;
         }
 
         return `${this.baseMapURL}${formattedCoordinates}-${intensity}.png`;
