@@ -54,6 +54,9 @@ const geonet = new GeoNet();
 
 // Get recent earthquakes (MMI = 3 for Light intensity)
 const quakes = await geonet.getQuakes(3);
+
+// Get volcano alert levels
+const alerts = await geonet.getVolcanoAlertLevel();
 ```
 
 ### Error Handling
