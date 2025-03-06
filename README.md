@@ -77,7 +77,7 @@ For detailed documentation, visit our [documentation site](https://geonet.js.org
 
 Contributions are welcome! Please read documentation and get familiar with the project code. For details on our code of conduct please *see* our [Code of Conduct](https://github.com/carolinaisslaying/geonet/blob/main/CODE_OF_CONDUCT.md).
 
-If you identify a security vulnerability, please read our [Security Policy](https://github.com/carolinaisslaying/geonet/blob/main/CODE_OF_CONDUCT.md) for information on how to report it, and what versions are supported.
+If you identify a security vulnerability, please read our [Security Policy](https://github.com/carolinaisslaying/geonet/blob/main/SECURITY.md) for information on how to report it, and what versions are supported.
 
 ## Development
 
