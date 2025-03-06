@@ -88,8 +88,11 @@ pnpm test
 # Build the package
 pnpm build
 
-# Generate documentation
+# See documentation
 pnpm docs
+
+# Generate documentation
+pnpm run docs
 ```
 
 ## Licence
