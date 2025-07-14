@@ -3,6 +3,11 @@ export interface Geometry {
     coordinates: [number, number];
 }
 
+export interface FeatureCollection<T> {
+    type: "FeatureCollection";
+    features: Feature<T>[];
+}
+
 export interface Feature<T> {
     type: "Feature";
     geometry: Geometry;

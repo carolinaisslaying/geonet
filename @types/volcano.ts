@@ -1,4 +1,4 @@
-import { Feature as CommonFeature, Status } from "./common";
+import { FeatureCollection as CommonFeatureCollection, Status } from "./common";
 import { QuakeProperties } from "./quake";
 
 /* 
@@ -56,10 +56,7 @@ export interface VolcanoProperties {
     volcanoTitle: string;
 }
 
-export interface VolcanoAlertLevelResponse {
-    type: "FeatureCollection";
-    features: CommonFeature<VolcanoProperties>[];
-}
+export type VolcanoAlertLevelResponse = CommonFeatureCollection<VolcanoProperties>;
 
 export enum QuakeIntensity {
     Unnoticeable = "unnoticeable",
@@ -76,7 +73,4 @@ export interface VolcanoQuakeProperties extends QuakeProperties {
     status: Status;
 }
 
-export interface VolcanoQuakeResponse {
-    type: "FeatureCollection";
-    features: CommonFeature<VolcanoQuakeProperties>[];
-}
+export type VolcanoQuakeResponse = CommonFeatureCollection<VolcanoQuakeProperties>;

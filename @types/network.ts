@@ -1,4 +1,4 @@
-import { Feature as CommonFeature } from "./common";
+import { FeatureCollection as CommonFeatureCollection } from "./common";
 import { FDSNStationChannel } from "./sensor";
 import { GNSSStationAntennaPeriod, GNSSStationReceiverPeriod } from "./sensor";
 
@@ -50,13 +50,10 @@ export interface NetworkSensorProperties {
     Code: string;
     Start: string;
     End: string;
-    SensorType: SensorType;
+    SensorType: string;
 }
 
-export interface NetworkSensorResponse {
-    type: "FeatureCollection";
-    features: CommonFeature<NetworkSensorProperties>[];
-}
+export type NetworkSensorResponse = CommonFeatureCollection<NetworkSensorProperties>;
 
 export interface NetworkGNSStationResponse {
     Code: string;
