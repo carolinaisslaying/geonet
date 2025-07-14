@@ -2,7 +2,7 @@
     Types relating to intensity endpoint requests. 
 */
 
-import { Feature as CommonFeature, MMI } from "./common";
+import { FeatureCollection as CommonFeatureCollection, MMI } from "./common";
 
 export interface IntensityRequest {
     type: "measured";
@@ -22,9 +22,8 @@ export type IntensityRequestUnion = IntensityRequest | IntensityRequestReported;
 
 export interface IntensityProperties {
     mmi: MMI;
-    count: number;
-    count_mmi: Record<MMI, number>;
+    count: undefined | number;
+    count_mmi: undefined | Record<MMI, number>;
 }
 
-export type IntensityResponse = CommonFeature<IntensityProperties>;
-
+export type IntensityResponse = CommonFeatureCollection<IntensityProperties>;

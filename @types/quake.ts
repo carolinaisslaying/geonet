@@ -1,4 +1,4 @@
-import { Feature as CommonFeature, MMI, Quality } from "./common";
+import { FeatureCollection as CommonFeatureCollection, MMI, Quality } from "./common";
 
 /* 
     Types relating to quake endpoint requests.
@@ -30,15 +30,9 @@ export interface QuakeHistoryProperties extends QuakeProperties {
     modificationTime: string;
 }
 
-export interface QuakeResponse {
-    type: "FeatureCollection";
-    features: CommonFeature<QuakeProperties>[];
-}
+export type QuakeResponse = CommonFeatureCollection<QuakeProperties>;
 
-export interface QuakeHistoryResponse {
-    type: "FeatureCollection";
-    features: CommonFeature<QuakeHistoryProperties>[];
-}
+export type QuakeHistoryResponse = CommonFeatureCollection<QuakeHistoryProperties>;
 
 export interface QuakeStatsResponse {
     magnitudeCount: {
@@ -51,7 +45,4 @@ export interface QuakeStatsResponse {
     };
 }
 
-export interface QuakesResponse {
-    type: "FeatureCollection";
-    features: CommonFeature<QuakeProperties>[];
-}
+export type QuakesResponse = CommonFeatureCollection<QuakeProperties>;

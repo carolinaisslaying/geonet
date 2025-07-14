@@ -1,4 +1,4 @@
-/** @type {import('typedoc').TypeDocOptions} */
+/** @type {import("typedoc").TypeDocOptions} */
 module.exports = {
     entryPoints: ["src/**/*.ts" , "@types/**/*.ts"],
     exclude: ["**/*.test.ts"],
@@ -17,4 +17,4 @@ module.exports = {
     excludeInternal: true,
     searchInComments: true,
     skipErrorChecking: false
-  };
+};
