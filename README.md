@@ -6,7 +6,7 @@
 
 A Node.js API wrapper for GeoNet — Aotearoa New Zealand's geological hazard monitoring system.
 
-> **Note**: This wrapper has been independently developed by Carolina Mitchell and is not officially affiliated with GeoNet or GNS Science.
+> **Note**: This wrapper has been independently developed by Carolina Mitchell and is not officially affiliated with GeoNet or Earth Sciences New Zealand (formerly GNS Science).
 
 ## Installation
 
@@ -119,4 +119,4 @@ This project is licensed under the AGPL-3.0 Licence, *see* the [LICENCE](https:/
 - [Carolina Mitchell](https://github.com/carolinaisslaying) for creating this package.
 - [Khai Dye-Brinkman](https://github.com/khaishea) for contributing to code debugging.
 - [GeoNet](https://geonet.org.nz/) for providing the public API.
-- [GNS Science](https://www.gns.cri.nz) and [Natural Hazards Commission](https://www.naturalhazards.govt.nz) for operating GeoNet.
+- [Earth Sciences New Zealand (formerly GNS Science)](https://www.gns.cri.nz) and [Natural Hazards Commission](https://www.naturalhazards.govt.nz) for operating GeoNet.
