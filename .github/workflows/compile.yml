@@ -1,4 +1,4 @@
-name: Build and Test TypeScript
+name: GeoNet
 
 on:
   push:
