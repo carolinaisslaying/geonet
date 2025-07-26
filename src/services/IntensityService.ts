@@ -42,6 +42,6 @@ export class IntensityService extends BaseService {
                 format: JSONFormatTypes.APPLICATION_VND_GEO_JSON_VERSION_2
             });
             
-        } else throw new Error("Invalid req type. Must be either 'measured' or 'reported'.");
+        } else throw new Error("Invalid request type. Must be either 'measured' or 'reported'.");
     }
 }
