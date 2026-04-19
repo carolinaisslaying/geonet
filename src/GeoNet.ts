@@ -50,13 +50,14 @@ import { QuakeMapUtil } from "./utils/QuakeMapUtil";
 export class GeoNet {
     /**
      * Creates a new instance of the GeoNet client.
-     * 
+     *
      * @param {IntensityService} intensityService - Service for intensity data.
      * @param {StrongService} strongService - Service for strong motion data.
      * @param {NewsService} newsService - Service for news feed data.
      * @param {QuakeService} quakeService - Service for earthquake data.
      * @param {VolcanoService} volcanoService - Service for volcanic activity data.
      * @param {NetworkService} networkService - Service for network sensor data.
+     * @param {QuakeMapUtil} quakeMapUtil - Utility for getting quake map and colour data.
      */
     constructor(
         private readonly intensityService: IntensityService = new IntensityService(),

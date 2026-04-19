@@ -1,5 +1,5 @@
 import { JSONFormatTypes } from "../../@types/base";
-import { NetworkFDSNStationRequest, NetworkFDSNStationResponse, NetworkGNSStationRequest, NetworkGNSStationResponse, NetworkSensorRequest, NetworkSensorResponse } from "../../@types/network";
+import { NetworkFDSNStationRequest, NetworkFDSNStationResponse, NetworkGNSStationResponse, NetworkSensorRequest, NetworkSensorResponse } from "../../@types/network";
 import { BaseService } from "./BaseService";
 
 /**

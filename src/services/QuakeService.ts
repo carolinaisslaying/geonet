@@ -1,6 +1,6 @@
 import { JSONFormatTypes } from "../../@types/base";
 import { MMI } from "../../@types/common";
-import { QuakeHistoryResponse, QuakeRequest, QuakeResponse, QuakesRequest, QuakesResponse, QuakeStatsResponse } from "../../@types/quake";
+import { QuakeHistoryResponse, QuakeResponse, QuakesResponse, QuakeStatsResponse } from "../../@types/quake";
 import { BaseService } from "./BaseService";
 
 /**
