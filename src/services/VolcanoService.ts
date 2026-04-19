@@ -1,5 +1,5 @@
 import { JSONFormatTypes } from "../../@types/base";
-import { VolcanoAlertLevelResponse, VolcanoID, VolcanoQuakeRequest, VolcanoQuakeResponse } from "../../@types/volcano";
+import { VolcanoAlertLevelResponse, VolcanoID, VolcanoQuakeResponse } from "../../@types/volcano";
 import { BaseService } from "./BaseService";
 
 /**

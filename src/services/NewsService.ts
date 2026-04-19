@@ -1,5 +1,5 @@
 import { JSONFormatTypes } from "../../@types/base";
-import { NewsFeedRequest, NewsFeedResponse } from "../../@types/news";
+import { NewsFeedResponse } from "../../@types/news";
 import { BaseService } from "./BaseService";
 
 /**

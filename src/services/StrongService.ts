@@ -1,5 +1,5 @@
 import { JSONFormatTypes } from "../../@types/base";
-import { StrongRequest, StrongResponse } from "../../@types/strong";
+import { StrongResponse } from "../../@types/strong";
 import { BaseService } from "./BaseService";
 
 /**
