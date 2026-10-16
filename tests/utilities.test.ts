@@ -1,3 +1,4 @@
+import { describe, expect, test } from "vitest";
 import { GeoNet } from "../src/GeoNet";
 import { MMI } from "../@types/common";
 
