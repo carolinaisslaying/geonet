@@ -58,15 +58,16 @@ export interface NetworkFDSNStationRequest {
  * Properties of each sensor feature returned by `getNetworkSensor`.
  *
  * @remarks
- * GNSS antenna features (`SensorType.GNSSAntenna`) return `Mark` instead of `Network`, `Station` and `Location`.
+ * GNSS antenna features (`SensorType.GNSSAntenna`) return `Mark` instead of `Network`, `Station` and `Location`. Those
+ * three properties are typed as `string` for backwards compatibility, but are `undefined` for GNSS antennas.
  */
 export interface NetworkSensorProperties {
-    /** The network ID. Not returned for GNSS antennas. */
-    Network?: string;
-    /** The station code. Not returned for GNSS antennas. */
-    Station?: string;
-    /** The location of the sensor. Not returned for GNSS antennas. */
-    Location?: string;
+    /** The network ID. `undefined` for GNSS antennas. */
+    Network: string;
+    /** The station code. `undefined` for GNSS antennas. */
+    Station: string;
+    /** The location of the sensor. `undefined` for GNSS antennas. */
+    Location: string;
     /** The GNSS mark code. Only returned for GNSS antennas. */
     Mark?: string;
     /** The station code, or the GNSS mark code for GNSS antennas. */
