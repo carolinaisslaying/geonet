@@ -36,7 +36,7 @@ body:
       label: Versions
       description: List necessary versions here. This includes your package version, runtime version, operating system, etc.
       placeholder: |
-        - geonet 1.0.0 (`npm ls geonet`)
+        - geonet 1.1.7 (`npm ls geonet`)
         - Node.js 22.13.1 (`node --version`)
         - TypeScript 5.8.2 (`npm ls typescript` if you use it)
         - macOS Sequoia 15.3.1
