@@ -39,14 +39,14 @@ export interface IntensityProperties {
     mmi: MMI;
     /** The count of MMI values reported in the area around the point. Only returned for reported intensity. */
     count: undefined | number;
-    /** A summary of report counts by MMI. Only returned for reported intensity. */
-    count_mmi: undefined | Partial<Record<MMI, number>>;
+    /** A summary of report counts by MMI. Only MMI values with reports are present. Only returned for reported intensity. */
+    count_mmi: undefined | Record<MMI, number>;
 }
 
 /** Shaking intensity information: GeoJSON features with the MMI at each point. */
 export type IntensityResponse = CommonFeatureCollection<IntensityProperties> & {
     /** The total count of MMI values reported. Only returned for reported intensity. */
     count?: number;
-    /** A summary of report counts by MMI across all features. Only returned for reported intensity. */
+    /** A summary of report counts by MMI across all features. Only MMI values with reports are present. Only returned for reported intensity. */
     count_mmi?: Partial<Record<MMI, number>>;
 };

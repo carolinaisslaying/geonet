@@ -57,16 +57,16 @@ export interface QuakeStatsResponse {
     /** Summaries of magnitude by count over the last 7, 28 and 365 days. */
     magnitudeCount: {
         /** Magnitude by count over the last 365 days, keyed by whole magnitude (e.g. `"2"`). */
-        days365: Record<string, number>;
+        days365: Record<MMI, number> & Record<string, number>;
         /** Magnitude by count over the last 28 days, keyed by whole magnitude (e.g. `"2"`). */
-        days28: Record<string, number>;
+        days28: Record<MMI, number> & Record<string, number>;
         /** Magnitude by count over the last 7 days, keyed by whole magnitude (e.g. `"2"`). */
-        days7: Record<string, number>;
+        days7: Record<MMI, number> & Record<string, number>;
     };
     /** Quake occurrence rates. */
     rate: {
         /** A per-day summary by count of quake occurrence, keyed by ISO 8601 date (e.g. `"2025-10-16T00:00:00+00:00"`). */
-        perDay: Record<string, number>;
+        perDay: Record<MMI, number> & Record<string, number>;
     };
 }
 
