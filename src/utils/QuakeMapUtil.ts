@@ -23,7 +23,7 @@ export class QuakeMapUtil {
         }
 
         if (isNaN(coordinates[0]) || isNaN(coordinates[1])) {
-            throw new Error("Coordinates must be an integer.");
+            throw new Error("Each coordinate must be a number.");
         }
 
         if (mmi === undefined || (!Object.values(MMI).includes(mmi))) throw new Error("MMI not provided, or was not a valid MMI.");
@@ -63,7 +63,7 @@ export class QuakeMapUtil {
      * Generates a colour code for a given MMI, which corresponds to the marker colour on GeoNet maps.
      * 
      * @param {MMI} mmi - The New Zealand Modified Mercalli Intensity of the quake.
-     * @returns {string} - The hex code colour for the earthquake based off of the MMI.
+     * @returns {string} - The hex code colour for the earthquake based on the MMI.
      * @throws {Error} - Throws an error if the MMI is not provided, or is invalid.
      * @since 1.1.0
      */

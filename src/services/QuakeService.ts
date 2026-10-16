@@ -59,7 +59,7 @@ export class QuakeService extends BaseService {
     /**
      * Fetches all quakes that have occurred over the past 365 days.
      * 
-     * @param {MMI} mmi - The request object containing the MMI.  
+     * @param {MMI} mmi - The MMI to filter quakes by.  
      * @returns {Promise<QuakesResponse>} - A promise that resolves to the quakes data.
      * @throws {Error} - Throws an error if the MMI is not provided or is not a valid MMI.
      * @since 1.0.0 

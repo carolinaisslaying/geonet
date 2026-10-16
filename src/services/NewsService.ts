@@ -11,13 +11,13 @@ export class NewsService extends BaseService {
     /**
      * Fetches a simple JSON feed of GeoNet's news.
      * 
-     * @param {number} page - The request parameters for fetching the news feed. If empty, the first page is returned.
+     * @param {number} page - The page number of the news feed to fetch. If empty, the first page is returned.
      * @returns {Promise<NewsFeedResponse>} - A promise that resolves to the simple JSON news feed data.
-     * @throws {Error} - Throws an error if the page number is not an integer.
+     * @throws {Error} - Throws an error if the page number is not a number.
      * @since 1.0.0
      */
     public async getNews(page?: number): Promise<NewsFeedResponse> {
-        if (page && isNaN(page)) throw new Error("Invalid page number, the page number must be an integer.");
+        if (page && isNaN(page)) throw new Error("Invalid page number; the page number must be a number.");
 
         return await this.GET({
             endpoint: `/news/geonet${page ? `?page=${page}` : ""}`,

@@ -3,7 +3,7 @@ import { NetworkFDSNStationRequest, NetworkFDSNStationResponse, NetworkGNSStatio
 import { BaseService } from "./BaseService";
 
 /**
- * StrongService class for fetching strong motion information for a specified quake from the GeoNet API.
+ * NetworkService class for fetching network sensor, GNSS mark and FDSN station information from the GeoNet API.
  * @extends BaseService
  * @since 1.0.0 
  */
@@ -63,11 +63,11 @@ export class NetworkService extends BaseService {
     }
 
     /**
-     * Fetches network data for a specified GNSS mark.
+     * Fetches network data for a specified FDSN station.
      * 
-     * @param {NetworkFDSNStationRequest} req - The request object containing the mark code.
+     * @param {NetworkFDSNStationRequest} req - The request object containing the station and network codes.
      * @returns {Promise<NetworkFDSNStationResponse>} - A promise that resolves to the sensor details data.
-     * @throws {Error} - Throws an error if the mark code is not provided.
+     * @throws {Error} - Throws an error if the station or network code is not provided, or is not a string.
      * @since 1.0.0
      */
     public async getNetworkFDSNDetails(req: NetworkFDSNStationRequest): Promise<NetworkFDSNStationResponse> {

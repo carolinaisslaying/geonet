@@ -1,7 +1,7 @@
 {
   "name": "geonet",
   "version": "1.1.6",
-  "description": "A Node.js API wrapper for GeoNet — Aotearoa's geological hazard monitoring system.",
+  "description": "A Node.js API wrapper for GeoNet — Aotearoa New Zealand's geological hazard monitoring system.",
   "main": "dist/src/GeoNet.js",
   "types": "dist/src/GeoNet.d.ts",
   "files": [

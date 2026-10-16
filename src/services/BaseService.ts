@@ -14,7 +14,7 @@ export abstract class BaseService {
      *
      * @param {BaseServiceGETRequest} req - The request object containing the endpoint and format.
      * @returns {Promise<any>} - A promise that resolves to the response data.
-     * @throws {Error} - Throws an error if the endpoint is not provided, is not a string, or does not start with a backslash (/).
+     * @throws {Error} - Throws an error if the endpoint is not provided, is not a string, or does not start with a forward slash (/).
      * @since 1.0.0
      */
     protected async GET(req: BaseServiceGETRequest): Promise<any> {
@@ -24,7 +24,7 @@ export abstract class BaseService {
             throw new Error("Endpoint not provided or is not a string.");
 
         if (!req.endpoint.startsWith("/"))
-            throw new Error("Endpoint must start with a backslash (/).");
+            throw new Error("Endpoint must start with a forward slash (/).");
 
         try {
             const response = await axios.get(url, {
