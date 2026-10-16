@@ -1,17 +1,20 @@
 import { Feature as CommonFeature, MMI } from "./common";
 
-/* 
+/*
     Types relating to strong endpoint requests.
 */
 
+/** Request parameters for `getStrong`. */
 export interface StrongRequest {
+    /** A valid quake public ID. */
     publicID: string;
 }
 
-/* 
+/*
     Types relating to strong endpoint responses.
 */
 
+/** Metadata about the quake. */
 export interface Metadata {
     author: string;
     depth: number;
@@ -24,6 +27,12 @@ export interface Metadata {
     version: string;
 }
 
+/**
+ * Strong motion data from a station.
+ *
+ * @remarks
+ * GeoNet gives peak ground acceleration (PGA) in %g, and peak ground velocity (PGV) in cm/second.
+ */
 export interface StrongProperties {
     distance: number;
     location: string;
@@ -37,10 +46,15 @@ export interface StrongProperties {
     station: string;
 }
 
+/** A GeoJSON feature with strong motion data from a station. */
 export type StrongFeature = CommonFeature<StrongProperties>;
 
+/** Strong motion information for a quake: quake metadata and strong motion data from stations. */
 export interface StrongResponse {
+    /** The GeoJSON object type. */
     type: string;
+    /** Metadata about the quake. */
     metadata: Metadata;
+    /** GeoJSON features with strong motion data from stations. */
     features: StrongFeature[];
 }
