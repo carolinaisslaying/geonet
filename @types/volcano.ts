@@ -38,6 +38,7 @@ export interface VolcanoQuakeRequest {
 /** Aviation colour code. */
 export enum VolcanoAviationColourCode {
     Green = "Green",
+    Yellow = "Yellow",
     Orange = "Orange",
     Red = "Red"
 }
