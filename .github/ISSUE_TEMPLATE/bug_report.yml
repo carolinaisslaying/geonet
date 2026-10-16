@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for filing an issue! If you are here to ask a question, use Discussions page instead.
+        Thank you for filing an issue! If you are here to ask a question, use the Discussions page instead.
   - type: textarea
     id: description
     attributes:
@@ -14,7 +14,7 @@ body:
       placeholder: |
         Steps to reproduce with below code sample:
         1. Do thing
-        2. Observe behavior
+        2. Observe behaviour
         3. See error logs below
     validations:
       required: true
@@ -34,9 +34,9 @@ body:
     id: versions
     attributes:
       label: Versions
-      description: List necessary versions here. This includes your package version, runtime version, operating system etc.
+      description: List necessary versions here. This includes your package version, runtime version, operating system, etc.
       placeholder: |
-        - geonet 1.0.0 (`npm ls geonet`)
+        - geonet 1.1.7 (`npm ls geonet`)
         - Node.js 22.13.1 (`node --version`)
         - TypeScript 5.8.2 (`npm ls typescript` if you use it)
         - macOS Sequoia 15.3.1

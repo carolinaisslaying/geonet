@@ -1,3 +1,4 @@
+import { describe, expect, test } from "vitest";
 import { GeoNet } from "../src/GeoNet";
 import { MMI } from "../@types/common";
 
@@ -27,12 +28,12 @@ describe("QuakeMapUtil", () => {
     });
 
     describe("error handling", () => {
-        test("should throw error for invalid coordinates in generateMapURL", () => {
+        test("should throw an error for invalid coordinates in generateMapURL", () => {
             expect(() => geonet.generateMapURL(null as any, MMI.Light))
                 .toThrow("Invalid coordinates provided.");
         });
 
-        test("should throw error for invalid MMI in generateColourCode", () => {
+        test("should throw an error for invalid MMI in generateColourCode", () => {
             expect(() => geonet.generateColourCode(999 as any))
                 .toThrow("MMI not provided, or was not a valid MMI.");
         });

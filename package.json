@@ -1,7 +1,7 @@
 {
   "name": "geonet",
-  "version": "1.1.6",
-  "description": "A Node.js API wrapper for GeoNet — Aotearoa's geological hazard monitoring system.",
+  "version": "1.1.7",
+  "description": "A Node.js API wrapper for GeoNet — Aotearoa New Zealand's geological hazard monitoring system.",
   "main": "dist/src/GeoNet.js",
   "types": "dist/src/GeoNet.d.ts",
   "files": [
@@ -12,7 +12,7 @@
   "scripts": {
     "build": "rm -rf dist && tsc",
     "clean": "rm -rf dist",
-    "test": "jest",
+    "test": "vitest run",
     "docs": "typedoc --options ./typedoc.config.js",
     "docs:watch": "typedoc --options ./typedoc.config.js --watch"
   },
@@ -45,14 +45,10 @@
     "axios": "^1.20.0"
   },
   "devDependencies": {
-    "@jest/types": "^29.6.3",
-    "@types/jest": "^29.5.14",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "^22.20.1",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.4.12",
-    "typedoc": "^0.27.9",
-    "typescript": "^5.9.3"
+    "@types/node": "^26.6.5",
+    "typedoc": "^0.28.20",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.5"
   },
-  "packageManager": "pnpm@10.0.0-beta.0+sha512.5935e74d6e69a7500c443e7e4f6b7378b7612f0b6dfe7c5cb785d5be4bbe0f7f8a301d5eeb68c4aa7c7d04f95126eef539011e93991a88aba0cb8f6f07fc951d"
+  "packageManager": "pnpm@10.34.7+sha512.ba98abc585539933375b5971f4bc6d6c73a1b4b7edc4a879e7d102fe5423d1e02309d67c60a11f04955093a96e521ad9c3b138cdd654ca5be563f378b3ae48bd"
 }

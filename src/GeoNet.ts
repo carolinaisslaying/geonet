@@ -25,7 +25,7 @@ import { QuakeMapUtil } from "./utils/QuakeMapUtil";
  * 
  * @remarks
  * This class acts as a central interface for all GeoNet API services and related utilities, thus providing a simplified
- * way for accessing earthquake, volcano, network data, among others, from GeoNet.
+ * way to access earthquake, volcano and network data, among others, from GeoNet.
  * 
  * @example
  * ```typescript
@@ -57,6 +57,7 @@ export class GeoNet {
      * @param {QuakeService} quakeService - Service for earthquake data.
      * @param {VolcanoService} volcanoService - Service for volcanic activity data.
      * @param {NetworkService} networkService - Service for network sensor data.
+     * @param {QuakeMapUtil} quakeMapUtil - Utility for generating quake map URLs and MMI colour codes.
      */
     constructor(
         private readonly intensityService: IntensityService = new IntensityService(),
@@ -68,72 +69,72 @@ export class GeoNet {
         private readonly quakeMapUtil: QuakeMapUtil = new QuakeMapUtil()
     ) {}
 
-    /** @inheritdoc {@link IntensityService.getIntensity} */
+    /** {@inheritDoc src/services/IntensityService!IntensityService.getIntensity} */
     public async getIntensity(req: IntensityRequestUnion): Promise<IntensityResponse> {
         return await this.intensityService.getIntensity(req);
     }
 
-    /** @inheritdoc {@link StrongService.getStrong} */
+    /** {@inheritDoc src/services/StrongService!StrongService.getStrong} */
     public async getStrong(publicID: string): Promise<StrongResponse> {
         return await this.strongService.getStrong(publicID);
     }
 
-    /** @inheritdoc {@link NewsService.getNews} */
+    /** {@inheritDoc src/services/NewsService!NewsService.getNews} */
     public async getNews(page?: number): Promise<NewsFeedResponse> {
         return await this.newsService.getNews(page);
     }
 
-    /** @inheritdoc {@link QuakeService.getQuake} */
+    /** {@inheritDoc src/services/QuakeService!QuakeService.getQuake} */
     public async getQuake(publicID: string): Promise<QuakeResponse> {
         return await this.quakeService.getQuake(publicID);
     }
 
-    /** @inheritdoc {@link QuakeService.getQuakeHistory} */
+    /** {@inheritDoc src/services/QuakeService!QuakeService.getQuakeHistory} */
     public async getQuakeHistory(publicID: string): Promise<QuakeHistoryResponse> {
         return await this.quakeService.getQuakeHistory(publicID);
     }
 
-    /** @inheritdoc {@link QuakeService.getQuakeStats} */
+    /** {@inheritDoc src/services/QuakeService!QuakeService.getQuakeStats} */
     public async getQuakeStats(): Promise<QuakeStatsResponse> {
         return await this.quakeService.getQuakeStats();
     }
 
-    /** @inheritdoc {@link QuakeService.getQuakes} */
+    /** {@inheritDoc src/services/QuakeService!QuakeService.getQuakes} */
     public async getQuakes(mmi: MMI): Promise<QuakesResponse> {
         return await this.quakeService.getQuakes(mmi);
     }
 
-    /** @inheritdoc {@link VolcanoService.getVolcanoAlertLevel} */
+    /** {@inheritDoc src/services/VolcanoService!VolcanoService.getVolcanoAlertLevel} */
     public async getVolcanoAlertLevel(): Promise<VolcanoAlertLevelResponse> {
         return await this.volcanoService.getVolcanoAlertLevel();
     }
 
-    /** @inheritdoc {@link VolcanoService.getVolcanoQuakes} */
+    /** {@inheritDoc src/services/VolcanoService!VolcanoService.getVolcanoQuakes} */
     public async getVolcanoQuakes(volcanoID: VolcanoID): Promise<VolcanoQuakeResponse> {
         return await this.volcanoService.getVolcanoQuakes(volcanoID);
     }
 
-    /** @inheritdoc {@link NetworkService.getNetworkSensor} */
+    /** {@inheritDoc src/services/NetworkService!NetworkService.getNetworkSensor} */
     public async getNetworkSensor(req: NetworkSensorRequest): Promise<NetworkSensorResponse> {
         return await this.networkService.getNetworkSensor(req);
     }
 
-    /** @inheritdoc {@link NetworkService.getNetworkGNSSDetails} */
+    /** {@inheritDoc src/services/NetworkService!NetworkService.getNetworkGNSSDetails} */
     public async getNetworkGNSSDetails(code: string): Promise<NetworkGNSStationResponse> {
         return await this.networkService.getNetworkGNSSDetails(code);
     }
 
-    /** @inheritdoc {@link NetworkService.getNetworkFDSNDetails} */
+    /** {@inheritDoc src/services/NetworkService!NetworkService.getNetworkFDSNDetails} */
     public async getNetworkFDSNDetails(req: NetworkFDSNStationRequest): Promise<NetworkFDSNStationResponse> {
         return await this.networkService.getNetworkFDSNDetails(req);
     }
 
-    /** @inheritdoc {@link QuakeMapUtil.generateMapURL} */
+    /** {@inheritDoc src/utils/QuakeMapUtil!QuakeMapUtil.generateMapURL} */
     public generateMapURL(coordinates: Geometry["coordinates"], mmi: MMI): string {
         return this.quakeMapUtil.generateMapURL(coordinates, mmi);
     }
 
-    /** @inheritdoc {@link QuakeMapUtil.generateColourCode} */
+    /** {@inheritDoc src/utils/QuakeMapUtil!QuakeMapUtil.generateColourCode} */
     public generateColourCode(mmi: MMI): string {
         return this.quakeMapUtil.generateColourCode(mmi);
     }

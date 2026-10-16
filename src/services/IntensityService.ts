@@ -8,16 +8,15 @@ import { BaseService } from "./BaseService";
  * @since 1.0.0 
  */
 export class IntensityService extends BaseService {
+    /**
+     * Fetches shaking intensity information data based on the provided request parameters.
+     * 
+     * @param {IntensityRequestUnion} req - The request parameters for fetching intensity data.
+     * @returns {Promise<IntensityResponse>} - A promise that resolves to the intensity response data.
+     * @throws {Error} - Throws an error if the request type is invalid.
+     * @since 1.0.0
+     */
     public async getIntensity(req: IntensityRequestUnion): Promise<IntensityResponse> {
-        /**
-         * Fetches shaking intensity information data based on the provided request parameters.
-         * 
-         * @param {IntensityRequestUnion} req - The request parameters for fetching intensity data.
-         * @returns {Promise<IntensityResponse>} - A promise that resolves to the intensity response data.
-         * @throws {Error} - Throws an error if the request type is invalid.
-         * @since 1.0.0
-         */
-
         if (req.type === "measured") {
             const params = new URLSearchParams({
                 type: req.type

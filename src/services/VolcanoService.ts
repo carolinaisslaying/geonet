@@ -22,9 +22,9 @@ export class VolcanoService extends BaseService {
     }
 
     /**
-     * Fetches quakes in the vicinity of the volcano within a pre-defined region by GeoNet over the past 60 days.
+     * Fetches quakes in the vicinity of the volcano within a region predefined by GeoNet over the past 60 days.
      * 
-     * @param {VolcanoID} volcanoID - The request object containing the volcano ID.
+     * @param {VolcanoID} volcanoID - The ID of the volcano.
      * @returns {Promise<VolcanoQuakeResponse>} - A promise that resolves to the volcano quake data.
      * @throws {Error} - Throws an error if the volcano ID is not provided or is not a valid volcano ID.
      * @since 1.0.0 
